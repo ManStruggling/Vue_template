@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 
 import "normalize.css/normalize.css";
-import "./styles/index";
+import "./styles/index.less";
 // import "lib-flexible"; //mobile application Enable
 
 import request from "./utils/request";
