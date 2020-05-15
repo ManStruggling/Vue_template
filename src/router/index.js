@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import managementRouter from "./modules/management.js";
+import productRouter from "./modules/product.js";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -8,21 +11,25 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+  managementRouter,
+  productRouter,
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
-
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || "vue-template";
+  if (to.path == "/login") {
+    next();
+  } else {
+    if (store.getters.userInfo) {
+      next();
+    } else {
+      next("/login");
+    }
+  }
+});
 export default router;
