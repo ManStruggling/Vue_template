@@ -93,14 +93,14 @@ const strategies = {
     rules: [
       {
         required: true,
-        message: "请输入",
+        message: "请输入"
       },
       {
         pattern: /^[0-9]{6}$/,
-        message: "请填写正确格式",
-      },
-    ],
-  },
+        message: "请填写正确格式"
+      }
+    ]
+  }
 };
 
 const validator = function() {

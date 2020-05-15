@@ -12,7 +12,7 @@ Vue.prototype.request = request;
 
 import * as filters from "./filters"; // global filters
 // register global utility filters
-Object.keys(filters).forEach((key) => {
+Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
 import permission from "./directive/permission";
@@ -23,5 +23,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");

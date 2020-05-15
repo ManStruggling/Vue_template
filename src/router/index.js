@@ -11,14 +11,14 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   managementRouter,
-  productRouter,
+  productRouter
 ];
 
 const router = new VueRouter({
-  routes,
+  routes
 });
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || "vue-template";

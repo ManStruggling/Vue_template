@@ -19,7 +19,8 @@ function Storage(storage = sessionStorage) {
   /**
    * set
    */
-  this.set = (key, value) => storage.setItem(key + "eAgent", JSON.stringify(value));
+  this.set = (key, value) =>
+    storage.setItem(key + "eAgent", JSON.stringify(value));
 
   /**
    * remove
