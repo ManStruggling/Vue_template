@@ -10,4 +10,4 @@ let data = {
     },
   ],
 };
-Mock.mock("/data/index", "get", data); // 根据数据模板生成模拟数据
+Mock.mock(`${process.env.VUE_APP_BASE_API}/data/index`, "get", data); // 根据数据模板生成模拟数据

@@ -20,7 +20,9 @@ Vue.directive("permission", permission);
 
 Vue.config.productionTip = false;
 
-require("./mock/index.js");
+if (process.env.NODE_ENV === "development") {
+  require("./mock/index.js");
+}
 
 new Vue({
   router,
